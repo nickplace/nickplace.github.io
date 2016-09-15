@@ -1,8 +1,14 @@
 $(function() {
-    //Grab the inline template
+    // load profle image
+    $('.me img').attr('src', $('.me img').data('src'));
+    $('link').each(function() {
+        $(this).attr('href', $(this).data('href'));
+    });
+
+    // Grab the inline template
     var template = document.getElementById('event').innerHTML;
 
-    //Parse it (optional, only necessary if template is to be used again)
+    // Parse it (optional, only necessary if template is to be used again)
     Mustache.parse(template);
 
     events = [
